@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS Practice: CSS Corner Cafe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cafe-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="display-2 mt-5">CSS Corner Cafe</h1>
+
+        <nav class="text-center mt-4">
+            <a href="#menu" class="text-dark">Menu</a> | <a href="#review" class="text-dark">Review</a> | <a href="#contact" class="text-dark">Contact Us</a>
+        </nav>
+
+        <section id="menu" class="text-black mt-5">
+            <h2 class="display-3">Menu</h2>
+            <table class="table table-striped text-black">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody class="text-white">
+                    <tr>
+                        <td>Coffee</td>
+                        <td>Our signature coffee blend.</td>
+                        <td>$2</td>
+                        <td><img src="cup-coffee.avif" alt="Coffee" style="width: 200px; height: 200px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Tea</td>
+                        <td>A selection of fine teas.</td>
+                        <td>$1.50</td>
+                        <td><img src="tea.avif" alt="Tea" style="width: 200px; height: 200px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Chicken & Waffles</td>
+                        <td>Golden brown waffles served with crispy chicken.</td>
+                        <td>$12</td>
+                        <td><img src="chickenandwaffles.avif" alt="Chicken & Waffles" style="width: 200px; height: 200px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Blueberry Pancakes</td>
+                        <td>Fluffy pancakes bursting with blueberries.</td>
+                        <td>$6</td>
+                        <td><img src="blueberrypancakes.jpeg" alt="Blueberry Pancakes" style="width: 200px; height: 200px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Avocado Toast with Poached Egg</td>
+                        <td>Sliced avocado on whole-grain toast, topped with a perfectly poached egg and a sprinkle of chili flakes.</td>
+                        <td>$8.99</td>
+                        <td><img src="avacadotoast.jpeg" alt="Avocado Toast with Poached Egg" style="width: 200px; height: 200px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Caprese Panini</td>
+                        <td>A classic Italian panini with fresh mozzarella, ripe tomatoes, basil leaves, and a drizzle of balsamic glaze.</td>
+                        <td>$9.99</td>
+                        <td><img src="capresepanini.jpeg" alt="Caprese Panini" style="width: 200px; height: 200px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Quinoa Salad Bowl</td>
+                        <td>Nutrient-packed quinoa mixed with cherry tomatoes, cucumber, feta cheese, and a zesty lemon vinaigrette.</td>
+                        <td>$11.99</td>
+                        <td><img src="quinoasalad.jpeg" alt="Quinoa Salad Bowl" style="width: 200px; height: 200px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Chicken Caesar Wrap</td>
+                        <td>Grilled chicken, crisp romaine lettuce, Parmesan cheese, and Caesar dressing wrapped in a whole-grain tortilla.</td>
+                        <td>$10.99</td>
+                        <td><img src="chickensaladwrap.jpeg" alt="Chicken Caesar Wrap" style="width: 200px; height: 200px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Triple Berry Parfait</td>
+                        <td>Layers of Greek yogurt, granola, and a mix of fresh strawberries, blueberries, and raspberries topped with honey.</td>
+                        <td>$7.99</td>
+                        <td><img src="tripleberry.jpeg" alt="Triple Berry Parfait" style="width: 200px; height: 200px;"></td>
+                    </tr>
+                    <!-- Add more items as needed -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="review" class="text-dark mt-5">
+            <h2 class="display-3">Submit Your Review</h2>
+            <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post">
+                <label for="name" class="display-4">Name</label>
+                <input type="text" id="name" name="name" class="form-control mb-3" />
+                <label for="rating" class="display-3">Your Rating:</label>
+                1-5<input type="range" id="rating" name="rating" min="1" max="5" class="form-control-range mb-3" />
+                <input type="submit" id="submit-btn" class="btn btn-primary" />
+            </form>
+        </section>
+
+        <section id="contact" class="text-dark mt-5">
+            <h2 class="display-3">Contact</h2>
+            <p class="lead">Call us at: <a href="tel:+15555551212" class="text-dark">1-555-555-1212</a></p>
+            <address class="lead">
+                CSS Corner Cafe<br />
+                101 W Main St<br />
+                Bellevue, WA 98004
+            </address>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

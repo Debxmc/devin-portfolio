@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="origin">
+    <title>Dating Website Form</title>
+    <style>
+        body {
+            font-family: Verdana, Arial, sans-serif;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        legend {
+            background: purple;
+            border-radius: 10px;
+            color: white;
+            padding: 12px;
+        }
+
+        fieldset {
+            background: lavender;
+            border: 10px solid darkblue;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            width: 720px;
+        }
+
+        div {
+            margin: 10px;
+        }
+
+        div:hover {
+            color: blue;
+        }
+
+        label {
+            display: inline-block;
+            text-align: right;
+            vertical-align: top;
+            width: 200px;
+        }
+
+        input[type="radio"] + label, input[type="checkbox"] + label {
+            width: auto;
+        }
+
+        #age {
+            width: 3ch;
+        }
+
+        .range-caption {
+            background: darkcyan;
+            color: white;
+            padding: 6px;
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            background: darkcyan;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Your Details For Our Dating Website</h1>
+    <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post" enctype="multipart/form-data">
+
+        <!-- Part 3: Your Face -->
+        <fieldset>
+            <legend>Your Face</legend>
+            <div>
+                <label for="avatar">Upload Your Image:</label>
+                <input type="file" id="avatar" name="avatar" required>
+            </div>
+            <p>Image Preview: <img id="preview" src="#" width="500" alt=""></p>
+        </fieldset>
+
+        <!-- Part 4: Your Details -->
+        <fieldset>
+            <legend>Your Details</legend>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div>
+                <label>Gender:</label>
+                <input type="radio" id="woman" name="gender" value="woman" required>
+                <label for="woman">Woman</label>
+                <input type="radio" id="man" name="gender" value="man">
+                <label for="man">Man</label>
+                <!-- Add more radio inputs for other genders if needed -->
+            </div>
+           
+            <!-- content order edit of age and date of birth to allow date of birth field to set the Age field automatically-->
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" onchange="calculateAge()">
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" readonly maxlength="3">
+            </div>
+           <!-- end content order edit-->
+           
+            <div>
+                <label for="color">Favorite Color:</label>
+                <input type="color" id="color" name="color">
+            </div>
+            <div>
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option>Choose a country</option>
+                    <option value="brazil">Brazil</option>
+                    <option value="france">France</option>
+                    <option value="japan">Japan</option>
+                    <option value="libya">Libya</option>
+                    <option value="usa">U.S.A.</option>
+                </select>
+            </div>
+            <div>
+                <label for="salary">Salary:</label>
+                <span class="range-caption">Poor</span>
+                <input type="range" id="salary" name="salary" min="0" max="100" value="50">
+                <span class="range-caption">Rich</span>
+            </div>
+        </fieldset>
+
+        <!-- Part 5: Your Contact Information -->
+        <fieldset>
+            <legend>Your Contact Information</legend>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" cols="40"></textarea>
+            </div>
+            <div>
+                <label>Contact method(s):</label>
+                <input type="checkbox" name="contact" id="emailCheckbox" value="email">
+                <label for="emailCheckbox">Email</label>
+                <input type="checkbox" name="contact" id="phoneCheckbox" value="phone">
+                <label for="phoneCheckbox">Phone</label>
+            </div>
+        </fieldset>
+
+        <!-- Part 6: Submit Input -->
+        <div>
+            <input type="submit">
+        </div>
+
+    </form>
+<!-- JavaScript Provided By Lesson: -->
+<script src="https://url.nucamp.co/datingjs"></script>
+
+<!-- JS Code Generated by an AI friend, to make Age field automatcially update with the informmation provided by the Date of Birth Field -->
+<script>
+    function calculateAge() {
+        // Get the value of the date of birth input field
+        let dobInput = document.getElementById('dob').value;
+        
+        // Calculate the age based on the entered date of birth
+        let dobDate = new Date(dobInput);
+        let today = new Date();
+        let age = today.getFullYear() - dobDate.getFullYear();
+        let monthDiff = today.getMonth() - dobDate.getMonth();
+        
+        // Adjust age if the current date is before the birthday this year
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobDate.getDate())) {
+            age--;
+        }
+        
+        // Update the value of the age input field
+        document.getElementById('age').value = age;
+    }
+</script>
+
+</body>
+</html>

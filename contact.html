@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Devin McKie</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(htmlbkgrnd.jpeg);
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-dark text-white">
+        <div class="container">
+            <h1>Contact Devin McKie</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="profile-DevinMckie.html"><i class="fa-solid fa-house fa-lg"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fa-solid fa-info fa-lg"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fa-solid fa-folder-tree"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#"><i class="fa-solid fa-address-card fa-lg"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact" class="container mt-4">
+        <h2>Get in Touch</h2>
+        <p>If you'd like to discuss a project or just say hello, feel free to reach out!</p>
+        <form action="/profile-Devin-Mckie.html" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="fname" class="form-label">First name:</label>
+                <input type="text" class="form-control" id="fname" name="fname" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="contactme" class="form-label">Comments:</label>
+                <textarea class="form-control" id="contactme" name="comments" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <div class="container">
+            <p>&copy; 2024 Devin McKie - Junior Developer</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript (optional, only if you need Bootstrap's JavaScript features) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

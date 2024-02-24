@@ -1,0 +1,76 @@
+body {
+    background-image: url(nathan-dumlao-Y3AqmbmtLQI-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Tahoma, Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #020003;
+    font-size: 100px;
+    border: 5px groove green;
+    padding: 20px;
+    margin: auto;
+    text-decoration: underline;
+}
+
+h2 {
+    color: #030006;
+    font-size: 80px;
+    padding: 30px;
+    margin: auto;
+    font-family: "Sofia", sans-serif;
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    margin: auto;
+}
+
+thead {
+    text-align: center;
+    padding: 20%;
+    font-family: "Sofia", sans-serif;
+    font-size: 50px;
+}
+
+label {
+    display: block;
+    margin: auto;
+}
+
+#submit-btn {
+    display: center;
+    margin: auto;
+}
+
+section {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    font-size: 80px;
+    text-decoration: underline;
+}
+
+td {
+    text-align: center;
+    width: 50%;
+    font-size: 30px;
+    padding: 15px;
+}
+
+form input {
+    background-color: red;
+}
+
+.display-3 {
+    size: 50px;
+}
+
+nav {
+    font-size: x-large;
+}
