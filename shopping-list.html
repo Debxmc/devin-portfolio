@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+    <style>
+        ul {
+            list-style-type: "\2610 ";
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Shopping List</h1>
+    <form id="myForm">
+        <label for="item">Add an item:</label>
+        <input id="item" type="text" name="item">
+        <button>Add</button>
+    </form>
+    <ul id="shoppingList">
+        <!-- list items will go into this ul via DOM manipulation -->
+    </ul>
+    <script>
+        // Step 1: Add global variables
+        const shoppingList = document.getElementById("shoppingList");
+        let itemsArray = [];
+
+        // Step 2: Create the getItem function
+        function getItem(event) {
+            event.preventDefault();
+            const item = document.getElementById("item").value.trim();
+
+            if (!item) {
+                console.error("Item cannot be empty.");
+                return;
+            }
+
+            if (!itemsArray.includes(item)) {
+                itemsArray.push(item);
+                itemsArray.sort();
+            } else {
+                console.warn("Item already in the list.");
+            }
+
+            document.getElementById("myForm").reset();
+            removeList();
+            makeList();
+            console.log(itemsArray);
+        }
+
+        // Step 3: Create the makeList function
+        function makeList() {
+            for (const item of itemsArray) {
+                const listItem = document.createElement("li");
+                listItem.textContent = item;
+                listItem.addEventListener("click", removeItem);
+                shoppingList.appendChild(listItem);
+            }
+        }
+
+        // Step 4: Create the removeList function
+        function removeList() {
+            while (shoppingList.firstChild) {
+                shoppingList.removeChild(shoppingList.firstChild);
+            }
+        }
+
+        // Step 5: Create the removeItem function
+        function removeItem(event) {
+            const item = event.currentTarget.textContent;
+            const index = itemsArray.indexOf(item);
+            
+            if (index > -1) {
+                itemsArray.splice(index, 1);
+            } else {
+                console.error("Item not found in the list.");
+                return;
+            }
+
+            removeList();
+            makeList();
+        }
+
+        // Add event listener to the form button
+        document.querySelector("button").addEventListener("click", getItem);
+
+        // Optional Step 8: Print button functionality
+        function printList() {
+            window.print();
+        }
+
+        const printButton = document.createElement("button");
+        printButton.textContent = "Print";
+        printButton.addEventListener("click", printList);
+        document.body.appendChild(printButton);
+
+        // CSS for print view
+        const style = document.createElement("style");
+        style.textContent = `
+            @media print {
+                #myForm, button {
+                    display: none;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

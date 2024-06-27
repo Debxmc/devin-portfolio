@@ -6,16 +6,17 @@
     <title>Contact Devin McKie</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
-
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>    
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"/>
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/brands.css"/>
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/solid.css"/>
+    
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url(htmlbkgrnd.jpeg);
+            background-image: url(images/htmlbkgrnd.jpeg);
             color: #333;
         }
 
@@ -38,11 +39,15 @@
             color: #333;
         }
 
+        .navbar-nav .nav-link {
+            color: #007bff;
+        }
+
         form {
             max-width: 500px;
             margin: auto;
         }
-
+        
         footer {
             background-color: #333;
             color: #fff;
@@ -58,19 +63,25 @@
 
     <header class="bg-dark text-white">
         <div class="container">
-            <h1>Contact Devin McKie</h1>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="profile-DevinMckie.html"><i class="fa-solid fa-house fa-lg"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fa-solid fa-info fa-lg"></i> About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fa-solid fa-folder-tree"></i> Projects</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#"><i class="fa-solid fa-address-card fa-lg"></i> Contact</a></li>
-                </ul>
+            <h1>About Devin McKie</h1>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-primary" href="profile-DevinMckie.html"><i class="fa-solid fa-house fa-lg"></i> Home</a></li>
+                        <li class="nav-item"><a class="nav-link active text-primary" href="about.html"><i class="fa-solid fa-info fa-lg"></i> About</a></li>
+                        <li class="nav-item"><a class="nav-link text-primary" href="projects.html"><i class="fa-solid fa-folder-tree"></i> Projects</a></li>
+                        <li class="nav-item"><a class="nav-link active text-primary" href="#"><i class="fa-solid fa-address-card fa-lg"></i> Contact</a></li>
+                    </ul>
+                </div>
             </nav>
+        </div>
         </div>
     </header>
 
-    <section id="contact" class="container mt-4">
+    <section id="contact" class="container mt-4 text-center">
         <h2>Get in Touch</h2>
         <p>If you'd like to discuss a project or just say hello, feel free to reach out!</p>
         <form action="/profile-Devin-Mckie.html" method="post" enctype="multipart/form-data">
@@ -97,7 +108,6 @@
     </footer>
 
     <!-- Bootstrap JavaScript (optional, only if you need Bootstrap's JavaScript features) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #colorDisplay {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #feedback {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Guessing Game</h1>
+    <div id="colorDisplay">Guess the Color!</div>
+    <input type="text" id="colorInput" placeholder="Enter color here">
+    <button id="submitBtn" onclick="checkColor()">Submit Guess</button>
+    <div id="feedback"></div>
+    <div id="tries">Tries: <span id="tryCount">0</div>
+    <script>
+        const COLORS_ARRAY = ['cyan', 'blue', 'gold', 'gray', 'green', 'magenta', 'orange', 'red', 'white', 'yellow'];
+        COLORS_ARRAY.sort();
+
+        let targetColor;
+        let tryCount = 0;
+        const MAX_TRIES = 5;
+
+        function runGame() {
+            targetColor = COLORS_ARRAY[Math.floor(Math.random() * COLORS_ARRAY.length)];
+            document.getElementById('colorDisplay').textContent = 'Guess the Color!';
+            tryCount = 0;
+            document.getElementById('tryCount').textContent = tryCount;
+        }
+
+        function checkColor() {
+            const userColor = document.getElementById('colorInput').value.toLowerCase();
+            tryCount++;
+            document.getElementById('tryCount').textContent = tryCount;
+
+            if (userColor === targetColor) {
+                document.getElementById('feedback').textContent = 'Correct! You guessed the right color!';
+                document.getElementById('feedback').style.color = 'green';
+                setTimeout(runGame, 2000); // Reset the game after 2 seconds
+            } else if (tryCount === MAX_TRIES) {
+                document.getElementById('feedback').textContent = `Sorry, you ran out of tries. The correct color was ${targetColor}.`;
+                document.getElementById('feedback').style.color = 'red';
+            } else {
+                document.getElementById('feedback').textContent = 'Wrong! Try again.';
+                document.getElementById('feedback').style.color = 'red';
+                document.getElementById('colorInput').value = '';
+            }
+        }
+
+        runGame();
+    </script>
+</body>
+</html>

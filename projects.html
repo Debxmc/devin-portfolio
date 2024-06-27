@@ -7,27 +7,31 @@
     <title>Devin McKie's Projects</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>    
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"/>
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/brands.css"/>
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/solid.css"/>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url(htmlbkgrnd.jpeg);
+            background-image: url(images/htmlbkgrnd.jpeg);
             color: #333;
         }
-
+    
+        .navbar-dark .navbar-nav .nav-link {
+            color: #007bff;
+        }
+    
         header {
             background-color: #333;
             color: #fff;
             padding: 1em;
             text-align: center;
         }
-
+    
         section {
             padding: 20px;
             margin: 20px;
@@ -35,25 +39,35 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
+    
         h2 {
             color: #333;
         }
-
+    
         .project {
             margin-bottom: 30px;
+            height: 100%;
         }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+    
+        .project img {
+            max-width: 100%;
+            height: auto; 
+        }
+    
+        .project h3 {
+            margin-top: 10px; 
+        }
+    
+        .project p {
+            margin-bottom: 10px; 
+        }
+    
+        .project a {
+            display: block;
+            margin-top: 10px;
         }
     </style>
+    
 </head>
 
 <body>
@@ -61,17 +75,23 @@
     <header class="bg-dark text-white">
         <div class="container">
             <h1>Devin McKie's Projects</h1>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="profile-DevinMckie.html"><i
-                                class="fa-solid fa-house fa-lg"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html"><i
-                                class="fa-solid fa-info fa-lg"></i> About</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#"><i class="fa-solid fa-folder-tree"></i>
-                            Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html"><i
-                                class="fa-solid fa-address-card fa-lg"></i> Contact</a></li>
-                </ul>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="profile-DevinMckie.html"><i
+                                    class="fa-solid fa-house fa-lg"></i> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html"><i
+                                    class="fa-solid fa-info fa-lg"></i> About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#"><i
+                                    class="fa-solid fa-folder-tree"></i> Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html"><i
+                                    class="fa-solid fa-address-card fa-lg"></i> Contact</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
@@ -80,32 +100,128 @@
         <h2 class="mb-4">Featured Projects</h2>
         <!-- Showcase your projects with images, descriptions, and links -->
         <div class="row row-content">
-            <div class="col-md-6 mb-4"> 
+            <div class="col-md-6 mb-4">
                 <div class="project">
-                    <img src="Project-datingform.png" alt="Screenshot of a Dating Form" class="img-fluid mb-3">
+                    <img src="images/Project-datingform.png" alt="Screenshot of a Dating Form" class="img-fluid mb-3">
                     <h3>Dating Form</h3>
                     <p>Make a dating form for a Website</p>
                     <a href="datingform.html" class="btn btn-primary">View Details</a>
                 </div>
             </div>
-            <div class="col-md-6 mb-4"> 
+            <div class="col-md-6 mb-4">
                 <div class="project">
-                    <img src="css-corner-cafe.png" alt="Screenshot of a Cafe Website" class="img-fluid mb-3">
+                    <img src="images/css-corner-cafe.png" alt="Screenshot of a Cafe Website" class="img-fluid mb-3">
                     <h3>Cafe Website</h3>
                     <p>Make a Menu For A Cafe</p>
                     <a href="css-corner-cafe.html" class="btn btn-primary">View Details</a>
                 </div>
             </div>
-            <div class="col-md-6 mb-4"> 
+            <div class="col-md-6 mb-4">
                 <div class="project">
-                    <!-- Add details for the third project -->
+                    <img src="images/weather-app.png" alt="Screenshot of Weather App" class="img-fluid mb-3">
+                        <h3>Weather App</h3>
+                        <p>A weather application that provides current weather information.</p>
+                        <a href="weatherAppProject/index.html" class="btn btn-primary">View Details</a>
                 </div>
             </div>
-            <div class="col-md-6 mb-4"> 
+            <div class="col-md-6 mb-4">
                 <div class="project">
+                    <div class="row row-content">
+                        <!-- Color Guessing Game -->
+                        <div class="col-md-6 mb-4">
+                            <div class="project">
+                                <img src="images/color-guessing-game.png" alt="Color Guessing Game" class="img-fluid mb-3">
+                                <h3>Color Guessing Game</h3>
+                                <p>A fun game to guess colors and test your knowledge.</p>
+                                <a href="color-guessing-game.html" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    
+                        <!-- Dice Game -->
+                        <div class="col-md-6 mb-4">
+                            <div class="project">
+                                <img src="images/dice-game.png" alt="Dice Game" class="img-fluid mb-3">
+                                <h3>Dice Game</h3>
+                                <p>Roll the dice and see your luck in this exciting game.</p>
+                                <a href="dice-game.html" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    
+                        <!-- Matching Game -->
+                        <div class="col-md-6 mb-4">
+                            <div class="project">
+                                <img src="images/matching-game.png" alt="Matching Game" class="img-fluid mb-3">
+                                <h3>Matching Game</h3>
+                                <p>Test your memory with this engaging matching game.</p>
+                                <a href="matching-game.html" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    
+                        <!-- News App -->
+                        <div class="col-md-6 mb-4">
+                            <div class="project">
+                                <img src="images/news-app.png" alt="News App" class="img-fluid mb-3">
+                                <h3>News App</h3>
+                                <p>Stay updated with the latest news using this informative app.</p>
+                                <a href="news-app.html" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    
+                        <!-- Number Guessing Game -->
+                        <div class="col-md-6 mb-4">
+                            <div class="project">
+                                <img src="images/number-guessing-game.png" alt="Number Guessing Game" class="img-fluid mb-3">
+                                <h3>Number Guessing Game</h3>
+                                <p>Guess the correct number and win in this exciting game.</p>
+                                <a href="number-guessing-game.html" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    
+                        <!-- Random Color App -->
+                        <div class="col-md-6 mb-4">
+                            <div class="project">
+                                <img src="images/random-color-app.png" alt="Random Color App" class="img-fluid mb-3">
+                                <h3>Random Color App</h3>
+                                <p>Explore a variety of colors with this interactive app.</p>
+                                <a href="random-color-app.html" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    
+                        <!-- Shopping List -->
+                        <div class="col-md-6 mb-4">
+                            <div class="project">
+                                <img src="images/shopping-list.png" alt="Shopping List" class="img-fluid mb-3">
+                                <h3>Shopping List</h3>
+                                <p>Organize your shopping items with this convenient list app.</p>
+                                <a href="shopping-list.html" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    
+                        <!-- Theatre Complete -->
+                        <div class="col-md-6 mb-4">
+                            <div class="project">
+                                <img src="images/theatre-complete.png" alt="Theatre Complete" class="img-fluid mb-3">
+                                <h3>Theatre Complete</h3>
+                                <p>Experience the world of theatre with this comprehensive app.</p>
+                                <a href="theatre-complete.html" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    
+                        <!-- Trivia Game -->
+                        <div class="col-md-6 mb-4">
+                            <div class="project">
+                                <img src="images/trivia-game.png" alt="Trivia Game" class="img-fluid mb-3">
+                                <h3>Trivia Game</h3>
+                                <p>Test your knowledge with this exciting trivia game.</p>
+                                <a href="trivia-game/trivia.html" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!-- Add details for the fourth project -->
                 </div>
             </div>
+    
             <!-- Additional project sections -->
 
         </div>
@@ -118,8 +234,7 @@
     </footer>
 
     <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

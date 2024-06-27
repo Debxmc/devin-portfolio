@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #question {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+        #answer {
+            margin-bottom: 10px;
+        }
+        #feedback {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .btn-custom {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mb-4">Trivia Game</h1>
+        <div id="question" class="alert alert-info">Click "New Question" to start the game</div>
+        <input id="answer" type="text" class="form-control" placeholder="Your answer here">
+        <button id="questionBtn" class="btn btn-primary btn-custom">New Question</button>
+        <button id="answerBtn" class="btn btn-success btn-custom">Submit Answer</button>
+        <div id="feedback" class="mt-4"></div>
+    </div>
+    <script src="questions.js"></script> <!-- Link to your JSON data -->
+    <script src="trivia.js"></script> <!-- Link to your JS file -->
+</body>
+</html>
